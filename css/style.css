@@ -20,6 +20,52 @@ header {
     /*padding: rem;*/
 }
 
+/* Navbar Styling */
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    overflow: auto;
+    /* width: 20%; */
+    border-right: 1px solid #ddd;
+    height: 100rem;
+}
+
+.navbar li {
+    line-height: 3rem;
+}
+
+.navbar li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 0 45px;
+    cursor: pointer;
+}
+
+.navbar li a:hover:not(.intellectual-logo) {
+    background-color: #dfecfc;
+}
+
+.list-item img {
+    height: 1.5rem;
+    padding: 10px;
+    transform: translateY(1rem);
+}
+
+/* Intellectual Logo Styling */
+.intellectual-logo img {
+    height: 5rem;
+    transform: translateX(1rem) translateY(1rem);
+}
+
+.center {
+    display: grid;
+    place-items: center;
+    top: 100px;
+}
+
 
 
 /* Main Content Displayed In the Middle of The Page */
@@ -33,4 +79,7 @@ main {
     text-align: center;
 }
 
-
+.main-content img {
+    height: 7.7rem;
+    padding-right: 0;
+}
