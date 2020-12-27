@@ -83,3 +83,24 @@ main {
     height: 7.7rem;
     padding-right: 0;
 }
+
+
+/*  Button Styling */
+.random-btn {
+    padding: 12px 80px;
+    font-size: 16px;
+    background: #0363d5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#section1 {
+    margin-top: 14rem;
+}
+
+.flex {
+    display: block;
+    text-align: center;
+}
