@@ -16,10 +16,6 @@ header {
     grid-column: 1/ 2;
 }
 
-.left-sidebar {
-    padding: rem;
-}
-
 /* Navbar Styling */
 .navbar {
     list-style: none;
@@ -40,7 +36,7 @@ header {
     color: #333;
     text-decoration: none;
     display: block;
-    padding: 0px 45px;
+    padding: 0 45px;
     cursor: pointer;
 }
 
@@ -180,7 +176,7 @@ footer {
 
 .single-meal p {
     margin: 0;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     line-height: 1.5;
 }
 
@@ -234,7 +230,7 @@ footer {
         color: #333;
         text-decoration: none;
         display: block;
-        padding: 0px 4px;
+        padding: 0 4px;
         cursor: pointer;
     }
 
