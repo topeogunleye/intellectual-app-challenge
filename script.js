@@ -1,12 +1,17 @@
-// Make section1 empty again after a link is clicked
-// so that the main div content it don't add up and create multiple divs
+
+// Clears Section 1(mainDiv) when it's called.
 const empty = () => {
     document.querySelector('#section1').innerHTML = ``;
 }
 
 
-// Here we create a function to change the content of the main div
-//  in accordance with the links being clicked in the leftbar
+/**
+ *  Changes the content in the Main Div.
+ * @param {string} ides - The id elements used for the onclick event.
+ * @param {string} img - The img elements used to change the image in the MainDiv.
+ * @param {string} heading - The heading elements used to change the heading in the MainDiv.
+ * @param {string} paragraph - The paragraph elements used to change the paragraphs in the MainDiv.
+ */
 const mainDiv = (ides, img, heading, paragraph) => {
     const ids = document.querySelector(ides);
 
@@ -19,8 +24,6 @@ const mainDiv = (ides, img, heading, paragraph) => {
 
 
         if (section.innerHTML === "") {
-            let button = document.getElementById('random');
-
 
             section.innerHTML = `
           <img src="${img}" alt="" />
@@ -40,8 +43,7 @@ const mainDiv = (ides, img, heading, paragraph) => {
     })
 }
 
-// calling the function mainDiv with it's parameters
-// that'll change the content of the main div
+// calling the function  that'll change the content of the main div
 mainDiv('#dashboard', './icons/gauge-dashboard.png', 'Add Dashboards', 'Dashboard for Intellectual App');
 mainDiv('#organizations', './icons/building-modern.png', 'Add organizations', 'The list of organizations');
 mainDiv('#locations', './icons/house.png', 'Add Locations', 'Locations are where you receive visitors');
@@ -88,7 +90,10 @@ function getRandomMeal() {
         });
 }
 
-// Add meal to DOM
+/**
+ * Adds meals to DOM
+ * @param {Object} meal - Meal Object being fetched from the API.
+ */
 function addMealToDOM(meal) {
     const ingredients = [];
 
