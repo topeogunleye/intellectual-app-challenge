@@ -1,5 +1,5 @@
-// Make section1 empty again after a new link is clicked
-// so that it doesn't add up and create multiple sections
+// Make section1 empty again after a link is clicked
+// so that the main div content it don't add up and create multiple divs
 const empty = () => {
     document.querySelector('#section1').innerHTML = ``;
 }

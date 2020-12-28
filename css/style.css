@@ -17,7 +17,7 @@ header {
 }
 
 .left-sidebar {
-    /*padding: rem;*/
+    padding: rem;
 }
 
 /* Navbar Styling */
@@ -40,7 +40,7 @@ header {
     color: #333;
     text-decoration: none;
     display: block;
-    padding: 0 45px;
+    padding: 0px 45px;
     cursor: pointer;
 }
 
@@ -84,7 +84,6 @@ main {
     padding-right: 0;
 }
 
-
 /*  Button Styling */
 .random-btn {
     padding: 12px 80px;
@@ -104,6 +103,19 @@ main {
     display: block;
     text-align: center;
 }
+
+/* .right-sidebar {
+  background: yellow;
+  grid-column: 3 / 4;
+}
+
+footer {
+  background: wheat;
+  padding: 2rem;
+  text-align: center;
+  grid-column: 1 / 4;
+} */
+
 
 /* Meal Styling  */
 
@@ -205,10 +217,6 @@ main {
     }
 }
 @media (max-width: 500px) {
-    input[type='text'] {
-        width: 100%;
-    }
-
     .meals {
         grid-template-columns: 1fr;
     }
@@ -216,6 +224,28 @@ main {
     .meal {
         height: 300px;
         width: 300px;
+    }
+
+    .navbar li a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 0px 4px;
+        cursor: pointer;
+    }
+
+    .random-btn {
+        padding: 12px 30px;
+        font-size: 16px;
+        background: #0363d5;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    header {
+        width: 100%;
     }
 }
 
