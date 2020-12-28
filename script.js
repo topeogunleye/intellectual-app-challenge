@@ -18,15 +18,23 @@ const mainDiv = (ides, img, heading, paragraph) => {
         section.className = "main-content";
 
 
-
         if (section.innerHTML === "") {
+            let button = document.getElementById('random');
+
 
             section.innerHTML = `
-            <img src="${img}" alt="" />
-            <h1 class="heading">${heading}</h1>
-            <p class="paragraph">${paragraph}</p>  
-    `
+          <img src="${img}" alt="" />
+          <h1 class="heading">${heading}</h1>
+          <p class="paragraph">${paragraph}</p>  
+
+          <button class="random-btn" id="random">
+        Add 
+          </button>
+  `
             ;
+
+            askForButton();
+            declareButton();
 
         }
     })
@@ -45,8 +53,11 @@ mainDiv('#profile', './icons/single-neutral.png','Add Profile', 'This are the us
 mainDiv('#logout', './icons/logout.png', 'Logout', 'Click below to logout');
 
 // Elements used to display Random Food
-const random = document.getElementById('random'),
-    mealsEl = document.getElementById('meals'),
+function declareButton() {
+    const random = document.getElementById('random')
+}
+
+const mealsEl = document.getElementById('meals'),
     resultHeading = document.getElementById('result-heading'),
     single_mealEl = document.getElementById('single-meal');
 
@@ -92,38 +103,42 @@ function addMealToDOM(meal) {
     }
 
     single_mealEl.innerHTML = `
-    <div class="single-meal">
-      <h1>${meal.strMeal}</h1>
-      <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
-      <div class="single-meal-info">
-        ${meal.strCategory ? `<p>${meal.strCategory}</p>` : ''}
-        ${meal.strArea ? `<p>${meal.strArea}</p>` : ''}
-      </div>
-      <div class="main">
-        <p>${meal.strInstructions}</p>
-        <h2>Ingredients</h2>
-        <ul>
-          ${ingredients.map(ing => `<li>${ing}</li>`).join('')}
-        </ul>
-      </div>
+  <div class="single-meal">
+    <h1>${meal.strMeal}</h1>
+    <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+    <div class="single-meal-info">
+      ${meal.strCategory ? `<p>${meal.strCategory}</p>` : ''}
+      ${meal.strArea ? `<p>${meal.strArea}</p>` : ''}
     </div>
-  `;
+    <div class="main">
+      <p>${meal.strInstructions}</p>
+      <h2>Ingredients</h2>
+      <ul>
+        ${ingredients.map(ing => `<li>${ing}</li>`).join('')}
+      </ul>
+    </div>
+  </div>
+`;
 }
 
 // Event listeners
-random.addEventListener('click', getRandomMeal);
+function askForButton() {
+    random.addEventListener('click', getRandomMeal);
 
-mealsEl.addEventListener('click', e => {
-    const mealInfo = e.path.find(item => {
-        if (item.classList) {
-            return item.classList.contains('meal-info');
-        } else {
-            return false;
+    mealsEl.addEventListener('click', e => {
+        const mealInfo = e.path.find(item => {
+            if (item.classList) {
+                return item.classList.contains('meal-info');
+            } else {
+                return false;
+            }
+        });
+
+        if (mealInfo) {
+            const mealID = mealInfo.getAttribute('data-mealid');
+            getMealById(mealID);
         }
     });
+}
 
-    if (mealInfo) {
-        const mealID = mealInfo.getAttribute('data-mealid');
-        getMealById(mealID);
-    }
-});
+
