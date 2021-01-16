@@ -8,4 +8,4 @@ Create a web page based on the design shown in recreate-this.png
 - No use of javascript libraries
 - Clicking on Create button fetches & displays results from a publicly accessible API (choose any from here https://github.com/public-apis/public-apis)
 
-[live demo](https://pedantic-mirzakhani-468876.netlify.app)
+[live demo](https://intellectualapp.netlify.app/#)
