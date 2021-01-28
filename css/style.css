@@ -45,6 +45,18 @@ header {
     background-color: #dfecfc;
 }
 
+#navbar li a:hover {
+    font-size: 3rem;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+#navbar li a:active {
+    background: #0363d5;
+}
+
 .list-item img {
     height: 1.5rem;
     padding: 10px;
